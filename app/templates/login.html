@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic Classifier Studio - Login</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="login-page">
+  <main class="card">
+    <h1>Agentic Classifier Studio</h1>
+    <p class="muted">Welcome back. Sign in to label and train.</p>
+    <form method="post" action="/login" class="stack">
+      <label>Username
+        <input type="text" name="username" value="admin" required>
+      </label>
+      <label>Password
+        <input type="password" name="password" value="1234" required>
+      </label>
+      <button type="submit">Sign in</button>
+    </form>
+  </main>
+</body>
+</html>

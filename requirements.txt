@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+SQLAlchemy
+pydantic
+itsdangerous
+scikit-learn
+joblib
+jinja2
+python-dotenv
+langchain-openai
+langchain-core

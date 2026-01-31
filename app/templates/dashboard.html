@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic Classifier Studio</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div>
+        <h1>Agentic Classifier Studio</h1>
+        <p class="muted">A calm workspace for quick labeling and reusable classifiers.</p>
+      </div>
+    </div>
+    <form method="post" action="/logout">
+      <button class="ghost" type="submit">Logout</button>
+    </form>
+  </header>
+
+  <main class="grid container">
+    <section class="panel">
+      <h2>1) Upload CSV</h2>
+      <form id="upload-form" class="stack">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload</button>
+      </form>
+      <div id="upload-status" class="muted"></div>
+    </section>
+
+    <section class="panel">
+      <h2>2) Datasets</h2>
+      <div class="stack">
+        <button id="refresh-datasets" class="ghost">Refresh</button>
+        <select id="dataset-select"></select>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>3) Labeling Queue</h2>
+      <div class="stack">
+        <button id="load-unlabeled">Load Unlabeled</button>
+        <button id="load-uncertain" class="ghost">Load Uncertain</button>
+      </div>
+      <div id="label-table"></div>
+      <button id="save-labels">Save Labels</button>
+    </section>
+
+    <section class="panel">
+      <h2>4) Agent</h2>
+      <div class="stack">
+        <input id="agent-name" type="text" placeholder="Agent name" value="default-agent">
+        <button id="create-agent">Create Agent</button>
+        <div class="muted" id="agent-status"></div>
+      </div>
+      <div class="stack">
+        <label>Label budget
+          <input id="label-budget" type="number" value="50">
+        </label>
+        <label>Target F1
+          <input id="target-f1" type="number" step="0.01" value="0.85">
+        </label>
+        <button id="train-agent">Train Agent</button>
+        <div id="train-metrics" class="muted"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>5) Run</h2>
+      <button id="run-agent">Run on Unlabeled</button>
+      <div id="run-status" class="muted"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
